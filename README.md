@@ -6,6 +6,7 @@
 |Sofia Zalazar|
 |Santiago Iglesias|
 |Nicolas Kalaydjian|
+|Kevin Lewicki|
 
 ## Instrucciones
 Las instruciones funciones en sistemas GNU/Linux
