@@ -11,12 +11,10 @@ Se debe mostrar por pantalla:
 Supongan que no hay dos personas que hayan nacido el mismo día.
 */
 
-#include <iostream>
 #include <string.h>
-using namespace std;
 
-typedef char str30[30];
-typedef char str100[100];
+#include <iostream>
+using namespace std;
 
 typedef struct
 {
@@ -27,26 +25,24 @@ typedef struct
 
 typedef struct
 {
-    str30 nombre;
+    char nombre[30];
     tFecha fechaNac;
 } tPersona;
 
 //declaracion de funciones
 float diferenciaFechas(tFecha fecha1, tFecha fecha2);
 
-int main()
-{
-
+int main() {
     int menores20 = 0;
     int entre21y30 = 0;
     int mayores30 = 0;
     float edad;
     float edadMayor = 0;
     float edadMenor = 0;
-    bool esElPrimeroRegistro = true;
     char personaMayor[20];
     char personaMenor[20];
     tPersona persona;
+    bool esElPrimeroRegistro = true;
     tFecha hoy;
     tFecha fecha;
 
@@ -55,8 +51,7 @@ int main()
 
     char continuar = 'n';
 
-    do
-    {
+    do {
         cout << "Ingresar nombre: " << endl;
         cin >> persona.nombre;
         cout << "Ingrese el dia, mes y anio separados" << endl;
@@ -64,44 +59,30 @@ int main()
 
         edad = diferenciaFechas(hoy, fecha);
 
-        if (edad > 30)
-        {
-            mayores30 = mayores30 + 1;
-        }
-        else
-        {
-            if (edad < 21)
-            {
-                menores20 = menores20 + 1;
-            }
-            else
-            {
-                entre21y30 = entre21y30 + 1;
-            }
+        if (edad > 30) {
+            mayores30++;
+        } else if (edad < 21) {
+            menores20++;
+        } else {
+            entre21y30++;
         }
 
-        if (esElPrimeroRegistro)
-        {
+        if (esElPrimeroRegistro) {
             strcpy(personaMayor, persona.nombre);
             strcpy(personaMenor, persona.nombre);
             edadMayor = edad;
             edadMenor = edad;
             esElPrimeroRegistro = false;
-        }
-        else
-        {
-            if (edadMayor < edad)
-            {
+        } else {
+            if (edadMayor < edad) {
                 strcpy(personaMayor, persona.nombre);
             }
-            if (edad < edadMenor)
-            {
+            if (edad < edadMenor) {
                 strcpy(personaMenor, persona.nombre);
             }
         }
         cout << "quiere ingresar otra presona?(s o n): " << endl;
         cin >> continuar;
-
     } while (continuar != 'n');
 
     cout << "el nombre de la persona mayor: " << personaMayor << endl;
@@ -112,8 +93,7 @@ int main()
 }
 
 // funciones
-float diferenciaFechas(tFecha fecha1, tFecha fecha2)
-{
+float diferenciaFechas(tFecha fecha1, tFecha fecha2) {
     float dif;
 
     dif = (((fecha1.anio - fecha2.anio) * 12 + (fecha1.mes - fecha2.mes)) * 30 + fecha1.dia - fecha2.dia) / 360.0;
