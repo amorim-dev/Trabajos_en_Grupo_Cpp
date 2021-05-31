@@ -47,9 +47,11 @@ int main()
     char personaMayor[20];
     char personaMenor[20];
     tPersona persona;
-    int dia;
-    int mes;
-    int anio;
+    int diaHoy, mesHoy, anioHoy;
+    int dia, mes, anio;
+
+    cout << "Ingrese el dia, mes y anio actuales" << endl;
+    cin >> diaHoy >> mesHoy >> anioHoy;
 
     char continuar = 'n';
 
@@ -60,7 +62,7 @@ int main()
         cout << "Ingrese el dia, mes y anio separados" << endl;
         cin >> dia >> mes >> anio;
 
-        edad = diferenciaFechas(30, 05, 2021, dia, mes, anio);
+        edad = diferenciaFechas(diaHoy, mesHoy, anioHoy, dia, mes, anio);
 
         if (edad > 30)
         {
