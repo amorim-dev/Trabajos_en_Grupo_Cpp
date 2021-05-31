@@ -32,7 +32,7 @@ typedef struct
 } tPersona;
 
 //declaracion de funciones
-float diferenciaFechas(int dia1, int mes1, int anio1, int dia2, int mes2, int anio2);
+float diferenciaFechas(tFecha fecha1, tFecha fecha2);
 
 int main()
 {
@@ -48,7 +48,7 @@ int main()
     char personaMenor[20];
     tPersona persona;
     tFecha hoy;
-    int dia, mes, anio;
+    tFecha fecha;
 
     cout << "Ingrese el dia, mes y anio actuales" << endl;
     cin >> hoy.dia >> hoy.mes >> hoy.anio;
@@ -60,9 +60,9 @@ int main()
         cout << "Ingresar nombre: " << endl;
         cin >> persona.nombre;
         cout << "Ingrese el dia, mes y anio separados" << endl;
-        cin >> dia >> mes >> anio;
+        cin >> fecha.dia >> fecha.mes >> fecha.anio;
 
-        edad = diferenciaFechas(hoy.dia, hoy.mes, hoy.anio, dia, mes, anio);
+        edad = diferenciaFechas(hoy, fecha);
 
         if (edad > 30)
         {
@@ -112,10 +112,11 @@ int main()
 }
 
 // funciones
-float diferenciaFechas(int dia1, int mes1, int anio1, int dia2, int mes2, int anio2)
+float diferenciaFechas(tFecha fecha1, tFecha fecha2)
 {
     float dif;
 
-    dif = (((anio1 - anio2) * 12 + (mes1 - mes2)) * 30 + dia1 - dia2) / 360.0;
+    dif = (((fecha1.anio - fecha2.anio) * 12 + (fecha1.mes - fecha2.mes)) * 30 + fecha1.dia - fecha2.dia) / 360.0;
+
     return dif;
 }
