@@ -14,43 +14,34 @@ Supongan que no hay dos personas que hayan nacido el mismo día.
 #include <string.h>
 
 #include <iostream>
+
 using namespace std;
 
-typedef struct
-{
+typedef struct {
     int dia;
     int mes;
     int anio;
 } tFecha;
 
-typedef struct
-{
+typedef struct {
     char nombre[30];
     tFecha fechaNac;
 } tPersona;
 
-//declaracion de funciones
 float diferenciaFechas(tFecha fecha1, tFecha fecha2);
 
 int main() {
-    int menores20 = 0;
-    int entre21y30 = 0;
-    int mayores30 = 0;
-    float edad;
-    float edadMayor = 0;
-    float edadMenor = 0;
-    char personaMayor[20];
-    char personaMenor[20];
+    int menores20 = 0, entre21y30 = 0, mayores30 = 0;
+    float edad, edadMayor = 0, edadMenor = 0;
+    char personaMayor[20], personaMenor[20];
     tPersona persona;
     bool esElPrimeroRegistro = true;
-    tFecha hoy;
-    tFecha fecha;
+    tFecha hoy, fecha;
 
     cout << "Ingrese el dia, mes y anio actuales" << endl;
     cin >> hoy.dia >> hoy.mes >> hoy.anio;
 
     char continuar = 'n';
-
     do {
         cout << "Ingresar nombre: " << endl;
         cin >> persona.nombre;
@@ -92,11 +83,7 @@ int main() {
     cout << "cuántas personas tienen más de 30 años: " << mayores30 << endl;
 }
 
-// funciones
 float diferenciaFechas(tFecha fecha1, tFecha fecha2) {
-    float dif;
-
-    dif = (((fecha1.anio - fecha2.anio) * 12 + (fecha1.mes - fecha2.mes)) * 30 + fecha1.dia - fecha2.dia) / 360.0;
-
+    float dif = (((fecha1.anio - fecha2.anio) * 12 + (fecha1.mes - fecha2.mes)) * 30 + fecha1.dia - fecha2.dia) / 360.0;
     return dif;
 }
