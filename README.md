@@ -2,8 +2,8 @@
 
 |Grupo|Github|
 |---|---|
-|Bianca Amorim| @amorim-dev|
-|Sofia Zalazar|  @SOFIAZALAZAR|
+|Bianca Amorim| [@amorim-dev](https://github.com/amorim-dev)|
+|Sofia Zalazar|  [@SOFIAZALAZAR](https://github.com/SOFIAZALAZAR)
 |Santiago Iglesias||
 |Nicolas Kalaydjian||
 |Kevin Lewicki||
