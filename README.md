@@ -1,6 +1,6 @@
 # Trabajos practicos en grupo
 
-|Grupo||
+|Grupo|Github|
 |---|---|
 |Bianca Amorim| @amorim-dev|
 |Sofia Zalazar|  @SOFIAZALAZAR|
